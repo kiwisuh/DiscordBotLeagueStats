@@ -8,7 +8,7 @@ import pandas as pd
 
 
 # golbal variables
-api_key = 'RGAPI-8a31134e-9a7b-4742-b500-7a8cc2201684'
+
 watcher = LolWatcher(api_key)
 my_region = 'na1'
 client = discord.Client()
@@ -66,7 +66,7 @@ async def on_message(message):
 
   if message.content.startswith('$stats'):
     stat = get_staturl(message.content.split())
-    embedVar=discord.Embed(title= stat, url='https://na.op.gg/summoner/userName=kiwisuh', description="This is their summoner level:", color=0x109319)
+
     await message.channel.send(embed=embedVar)
     await message.channel.send(stat)
     me = watcher.summoner.by_name(my_region, stat)
